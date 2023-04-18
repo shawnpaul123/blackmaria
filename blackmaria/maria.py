@@ -35,6 +35,7 @@ def night_crawler(url: str, spec,query):
     filename = url.replace("https://","")
     filename = url.replace("/","_")
     filename = url.replace(".com","_")
+    filename = url.replace("www.","_")
 
     # save to disk
     if not os.path.exists(os.path.join(os.getcwd(), filename + ".json")):

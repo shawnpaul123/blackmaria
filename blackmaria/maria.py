@@ -32,6 +32,9 @@ def night_crawler(url: str, spec,query):
     base_url = url
     parsed_url = urlparse(base_url)
     filename = url # parsed_url.netloc.split(".")[1]
+    filename = url.replace("https://","")
+    filename = url.replace("/","_")
+    filename = url.replace(".com","_")
 
     # save to disk
     if not os.path.exists(os.path.join(os.getcwd(), filename + ".json")):
